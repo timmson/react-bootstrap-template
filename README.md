@@ -4,8 +4,8 @@ Template for Vue.js and Bootstrap application
 - React 17
 - Bootstrap 5
 - ESLint, Jest
- - Webpack
- - SASS/SCSS support
+- Webpack
+- SASS/SCSS support
 
 ### Clone
 ```sh
