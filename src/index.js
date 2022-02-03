@@ -1,10 +1,11 @@
-require("./index.scss");
-require("bootstrap");
+import "./index.scss"
+import "bootstrap"
 
-const React = require("react");
-const ReactDOM = require("react-dom");
+import React from "react"
+import ReactDOM from "react-dom"
 
-const Greeter = require("./greeter");
-const Calc = require("./calc");
+import Greeter from "./greeter"
+import Calc from "./calc"
 
-ReactDOM.render(<Greeter calc={new Calc()}/>, document.getElementById("app"));
+
+ReactDOM.render(<Greeter calc={new Calc()}/>, document.getElementById("app"))

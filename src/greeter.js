@@ -1,49 +1,34 @@
-const React = require("react");
-const PropTypes = require("prop-types");
+import React, {useState} from "react"
+import PropTypes from "prop-types"
 
-class Greeter extends React.Component {
+export default function Greeter(props) {
 
-	static propTypes = {
-		calc: PropTypes.object
-	};
+	const [state, setState] = useState({name: ""})
+	const update = (name) => setState({name: name})
 
-	constructor(props, context) {
-		super(props, context);
-		this.update = this.update.bind(this);
-		this.state = {name: ""};
-	}
-
-	getGreeting() {
-		return this.state.name.length > 0 ? `Hello, ${this.state.name}! Your number is ${this.props.calc.hash(this.state.name)}.` : "";
-	}
-
-	update(event) {
-		this.setState({name: event.target.value});
-	}
-
-	render() {
-		return (
-			<div id="app" className="container">
-				<h2 className="text-center">Your fist React+Bootstrap app</h2>
-				<div className="row">
-					<div className="col-4 text-right pt-4">
-						<p>Your name:</p>
-					</div>
-					<div className="col align-middle">
-						<input className="form-control mt-4" placeholder="Enter your name ..." type="text" id="username" onKeyUp={this.update}/>
-					</div>
+	return (
+		<div id="app" className="container">
+			<h2 className="text-center">Your fist React+Bootstrap app</h2>
+			<div className="row">
+				<div className="col-4 text-right pt-4">
+					<p>Your name:</p>
 				</div>
-				<div className="row mt-3">
-					<div className="col-3">
-						&nbsp;
-					</div>
-					<div className="col">
-						<p className="my-style mt-2">{this.getGreeting()}</p>
-					</div>
+				<div className="col align-middle">
+					<input className="form-control mt-4" placeholder="Enter your name ..." type="text" id="username" onKeyUp={(event) =>update(event.target.value)}/>
 				</div>
 			</div>
-		);
-	}
+			<div className="row mt-3">
+				<div className="col-3">
+					&nbsp;
+				</div>
+				<div className="col">
+					<p className="my-style mt-2">{state.name.length > 0 ? `Hello, ${state.name}! Your number is ${props.calc.hash(state.name)}.` : ""}</p>
+				</div>
+			</div>
+		</div>
+	)
 }
 
-module.exports = Greeter;
+Greeter.propTypes = {
+	calc: PropTypes.object.isRequired
+}

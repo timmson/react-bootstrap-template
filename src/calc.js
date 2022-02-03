@@ -5,13 +5,13 @@ class Calc {
 	}
 
 	hash(name) {
-		this.m = 0;
-		let acc = 0;
+		this.m = 0
+		let acc = 0
 		for (let i = 0; i < name.length; i++) {
-			acc += name.charCodeAt(i);
+			acc += name.charCodeAt(i)
 		}
-		return acc;
+		return acc
 	}
 }
 
-module.exports = Calc;
+module.exports = Calc
