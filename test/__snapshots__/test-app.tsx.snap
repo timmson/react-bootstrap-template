@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Greeter should return greeting 1`] = `
+<div
+  className="container-sm"
+  id="app"
+>
+  <h2
+    className="text-center"
+  >
+    Your fist React+Bootstrap app
+  </h2>
+  <div
+    className="row mt-4"
+  >
+    <div
+      className="col-4 text-end align-content-center"
+    >
+      <label
+        htmlFor="username"
+      >
+        Your name:
+      </label>
+    </div>
+    <div
+      className="col-8 align-content-center"
+    >
+      <input
+        className="form-control"
+        id="username"
+        onKeyUp={[Function]}
+        placeholder="Enter your name ..."
+        type="text"
+      />
+    </div>
+  </div>
+  <div
+    className="row mt-4"
+  >
+    <div
+      className="col-4"
+    >
+       
+    </div>
+    <div
+      className="col"
+    >
+      <p
+        className="my-style mt-2"
+      >
+        Please, start type your name
+      </p>
+    </div>
+  </div>
+</div>
+`;
