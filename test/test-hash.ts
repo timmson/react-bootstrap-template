@@ -1,11 +1,9 @@
-const Calc = require("../src/calc")
+import hash from "../src/hash"
 
 describe("Calculate function", () => {
 
-	let calc = new Calc()
-
 	test("gets 'Ivan' and should return 398", () => {
-		const result = calc.hash("Ivan")
+		const result = hash("Ivan")
 
 		expect(result).toEqual(398)
 	})

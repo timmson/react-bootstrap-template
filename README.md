@@ -1,11 +1,12 @@
 # react-bootstrap-template
 Template for Vue.js and Bootstrap application
 
+- TypeScript 4
 - React 17
 - Bootstrap 5
+- SASS/SCSS support
 - ESLint, Jest
 - Webpack
-- SASS/SCSS support
 
 ### Clone
 ```sh

@@ -1,11 +1,10 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
-    entry: "./src/index.js",
+    entry: "./src/index.tsx",
     output: {
-        path: path.resolve(__dirname, './'),
+        path: path.resolve(__dirname, "./"),
         filename: "index.js"
     },
     module: {
@@ -19,6 +18,11 @@ module.exports = {
                 }
             },
             {
+                test: /\.tsx?$/,
+                exclude: /(node_modules)/,
+                loader: "ts-loader",
+            },
+            {
                 test: /\.(sa|sc|c)ss$/i,
                 use: [
                     MiniCssExtractPlugin.loader,
@@ -28,6 +32,9 @@ module.exports = {
             }
         ]
     },
+	resolve: {
+		extensions: [".tsx", ".ts", ".js"],
+	},
     plugins: [
         new MiniCssExtractPlugin({
             filename: "index.css"
