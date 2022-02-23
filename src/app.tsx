@@ -1,18 +1,18 @@
 import React, {useState} from "react"
-import {IHash} from "./interfaces"
+import {Hash} from "./interfaces"
 
 type GreeterProps = {
-    hash: IHash
+	hash: Hash
 }
 
 const App = (props: GreeterProps) => {
 
 	const [state, setState] = useState({name: ""})
-	const update = (name) => setState({name: name})
+	const handleKeyUp = (e) => setState({name: e.target.value})
 
 	const greeting = state.name.length > 0 ?
 		`Hello, ${state.name}! Your number is ${props.hash(state.name)}.` :
-		"Please, start type your name"
+		"Please, start typing your name"
 
 	return (
 		<div id="app" className="container-sm">
@@ -22,13 +22,17 @@ const App = (props: GreeterProps) => {
 					<label htmlFor="username">Your name:</label>
 				</div>
 				<div className="col-8 align-content-center">
-					<input className="form-control" placeholder="Enter your name ..." type="text" id="username"
-						onKeyUp={(event) => update((event.target as HTMLInputElement).value)}/>
+					<input className="form-control"
+						   type="text" id="username"
+						   placeholder="Enter your name ..."
+						   onChange={handleKeyUp}
+						   value={state.name}
+					/>
 				</div>
 			</div>
 			<div className="row mt-4">
 				<div className="col-4">
-                    &nbsp;
+					&nbsp;
 				</div>
 				<div className="col">
 					<p className="my-style mt-2">{greeting}</p>

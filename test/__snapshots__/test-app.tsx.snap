@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Greeter should return greeting 1`] = `
+exports[`App should return app 1`] = `
 <div
   className="container-sm"
   id="app"
@@ -28,9 +28,10 @@ exports[`Greeter should return greeting 1`] = `
       <input
         className="form-control"
         id="username"
-        onKeyUp={[Function]}
+        onChange={[Function]}
         placeholder="Enter your name ..."
         type="text"
+        value=""
       />
     </div>
   </div>
@@ -48,7 +49,7 @@ exports[`Greeter should return greeting 1`] = `
       <p
         className="my-style mt-2"
       >
-        Please, start type your name
+        Please, start typing your name
       </p>
     </div>
   </div>

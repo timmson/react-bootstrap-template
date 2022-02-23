@@ -1,9 +1,9 @@
-import {IHash} from "./interfaces"
+import {Hash} from "./interfaces"
 
-const hash: IHash = (name: string) => {
+const CharCodeHash: Hash = (name: string) => {
 	return Array.from(Array(name.length).keys())
 		.map((i) => name.charCodeAt(i))
 		.reduce((p, c) => p + c)
 }
 
-export default hash
+export default CharCodeHash
