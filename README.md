@@ -1,5 +1,5 @@
 # react-bootstrap-template
-Template for Vue.js and Bootstrap application
+Template for React and Bootstrap application
 
 - TypeScript 4
 - React 17
@@ -21,15 +21,10 @@ npm i
 
 ### Run webpack
 
-#### Development mode
 ```sh
-npm run dev
-```
-#### Production mode
-```sh
-npm run prod
+npm start
 ```
 
-### Open index.html in browser
+### Open http://localhost:3000 in browser
 
 Enjoy!
