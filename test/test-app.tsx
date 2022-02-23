@@ -2,15 +2,15 @@ import React from "react"
 import * as renderer from "react-test-renderer"
 import {act} from "react-test-renderer"
 import App from "../src/app"
-import {Hash} from "../src/interfaces"
+
+jest.mock("../src/char-code-hash", () => () => 42)
 
 describe("App should", () => {
 
 	let component
-	const mockHash: Hash = () => 42
 
 	beforeEach(() => {
-		component = renderer.create(<App hash={mockHash}/>)
+		component = renderer.create(<App/>)
 	})
 
 	test("print name", () => {

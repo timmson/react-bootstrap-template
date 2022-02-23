@@ -1,17 +1,13 @@
 import React, {useState} from "react"
-import {Hash} from "./interfaces"
+import hash from "./char-code-hash"
 
-type GreeterProps = {
-	hash: Hash
-}
-
-const App = (props: GreeterProps) => {
+const App = () => {
 
 	const [state, setState] = useState({name: ""})
 	const handleKeyUp = (e) => setState({name: e.target.value})
 
 	const greeting = state.name.length > 0 ?
-		`Hello, ${state.name}! Your number is ${props.hash(state.name)}.` :
+		`Hello, ${state.name}! Your number is ${hash(state.name)}.` :
 		"Please, start typing your name"
 
 	return (
