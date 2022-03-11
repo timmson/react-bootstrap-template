@@ -1,6 +1,5 @@
 import React from "react"
-import * as renderer from "react-test-renderer"
-import {act} from "react-test-renderer"
+import renderer, {act} from "react-test-renderer"
 import App from "../src/app"
 
 jest.mock("../src/char-code-hash", () => () => 42)
