@@ -38,7 +38,6 @@ module.exports = {
 	},
 	plugins: [
 		new MiniCssExtractPlugin({filename: "index.css"})
-
 	],
 	devServer: {
 		static: {
